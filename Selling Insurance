@@ -1,0 +1,26 @@
+Chef has started a new job as an insurance agent.
+Each insurance costs X dollars and Chef gets a 20% commission on selling each insurance.
+Find the minimum number of insurances Chef needs to sell to earn at least 100 dollars. 
+
+The code in java would be like
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.ArithmeticException
+	{
+		// your code goes here
+		Scanner sc= new Scanner(System.in);
+		int T=sc.nextInt();
+		while(T-->0){
+		    int X=sc.nextInt();
+		    double per= 0.2*X;
+		    double min=100/per;
+		    System.out.println((int)(Math.ceil(min)));   
+		}
+	}
+}
