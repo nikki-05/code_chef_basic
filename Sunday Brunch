@@ -1,0 +1,28 @@
+On a sunny Sunday afternoon, Chef prepared a brunch for his 20 neighbours.Chef prepared a total of X plates. However, the meal was so good that the neighbours started taking Y plates each.
+Find the maximum number of neighbours Chef can feed completely.
+The question is simple and we are writing a solution in java:
+solution: since chef prepared total of X plates so to find plates taken by each neighbour we would divide and if the answer would be greater than 20 it means chef can feed  all of the  neigbours
+and if not then we would print those no. of plates.
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc= new Scanner(System.in);
+		int T=sc.nextInt();
+		while(T-->0){
+		    int X=sc.nextInt();
+		    int Y=sc.nextInt();
+		    int ans= X/Y;
+		    if(ans<=20)
+		        System.out.println(ans);
+		    else
+		        System.out.println(20);
+		}
+	}
+}
