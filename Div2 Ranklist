@@ -1,0 +1,43 @@
+You have a table Results, with 4 columns, as follows:
+
+Results
+(
+    username VARCHAR(255),
+    rating INT,
+    institution VARCHAR(255),
+    score INT
+);
+You are guaranteed that no two participants have the same score.
+Your task is to output the Div-2 ranklist. That is, list the usernames of the Div-2 participants, in decreasing order of their score.
+A participant is in Div-2 if their rating is >= 1600, and < 2000.
+Have the column header in the output as "Div 2 Ranklist".
+Example:
+Suppose this was the table:
+
+┌──────────┬────────┬─────────────┬───────┐
+│ username │ rating │ institution │ score │
+├──────────┼────────┼─────────────┼───────┤
+│ abcdefg  │ 3355   │ PQRT        │ 100   │
+│ hijkl    │ 1928   │ QWE         │ 120   │
+│ mno      │ 1500   │ IOP         │ 1290  │
+│ pqrst    │ 1699   │ ZXC         │ 520   │
+│ uvwxyz   │ 1723   │ BNM         │ 495   │
+└──────────┴────────┴─────────────┴───────┘
+There are 3 participants in Div-2: hijkl, pqrst, and uvwxyz. The other two participants' ratings are not within the Div-2 range.
+Among these three participants, pqrst has scored the highest, then uvwxyz, and finally hijkl.
+So, the output should be
+
+┌────────────────┐
+│ Div 2 Ranklist │
+├────────────────┤
+│ pqrst          │
+│ uvwxyz         │        
+│ hijkl          │
+└────────────────┘
+So, this is a simple question on sql query 
+the solution would look like:-
+
+SELECT username AS "Div 2 Ranklist"
+FROM Results
+WHERE rating >= 1600 AND rating < 2000
+ORDER BY score DESC;          //order by clause
